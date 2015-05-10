@@ -20,12 +20,12 @@ function! airline#themes#solarized#refresh()
   let s:base1   = {'t': s:ansi_colors ?  14 : (s:tty ? '7' : 245), 'g': '#93a1a1'}
   let s:base2   = {'t': s:ansi_colors ?   7 : (s:tty ? '7' : 254), 'g': '#eee8d5'}
   let s:base3   = {'t': s:ansi_colors ?  15 : (s:tty ? '7' : 230), 'g': '#fdf6e3'}
-  let s:yellow  = {'t': s:ansi_colors ?   3 : (s:tty ? '3' : 136), 'g': '#b58900'}
+  let s:yellow  = {'t': s:ansi_colors ?   3 : (s:tty ? '3' : 3), 'g': '#b58900'}
   let s:orange  = {'t': s:ansi_colors ?   9 : (s:tty ? '1' : 166), 'g': '#cb4b16'}
   let s:red     = {'t': s:ansi_colors ?   1 : (s:tty ? '1' : 160), 'g': '#dc322f'}
   let s:magenta = {'t': s:ansi_colors ?   5 : (s:tty ? '5' : 125), 'g': '#d33682'}
   let s:violet  = {'t': s:ansi_colors ?  13 : (s:tty ? '5' : 61 ), 'g': '#6c71c4'}
-  let s:blue    = {'t': s:ansi_colors ?   4 : (s:tty ? '4' : 33 ), 'g': '#268bd2'}
+  let s:blue    = {'t': s:ansi_colors ?   4 : (s:tty ? '4' : 4 ), 'g': '#268bd2'}
   let s:cyan    = {'t': s:ansi_colors ?   6 : (s:tty ? '6' : 37 ), 'g': '#2aa198'}
   let s:green   = {'t': s:ansi_colors ?   2 : (s:tty ? '2' : 64 ), 'g': '#859900'}
 
@@ -36,11 +36,11 @@ function! airline#themes#solarized#refresh()
   """"""""""""""""""""""""""""""""""""""""""""""""
   " Normal mode
   if s:background == 'dark'
-    let s:N1 = [s:base3, s:base1, 'bold']
+    let s:N1 = [s:base3, s:base1, '']
     let s:N2 = [s:base2, (s:tty ? s:base01 : s:base00), '']
     let s:N3 = [s:base01, s:base02, '']
   else
-    let s:N1 = [s:base2, s:base00, 'bold']
+    let s:N1 = [s:base2, s:base00, '']
     let s:N2 = [(s:tty ? s:base01 : s:base2), s:base1, '']
     let s:N3 = [s:base1, s:base2, '']
   endif
@@ -55,14 +55,14 @@ function! airline#themes#solarized#refresh()
   endif
 
   " Insert mode
-  let s:I1 = [s:N1[0], s:yellow, 'bold']
+  let s:I1 = [s:N1[0], s:green, '']
   let s:I2 = s:N2
   let s:I3 = s:N3
   let s:IF = s:NF
   let s:IM = s:NM
 
   " Visual mode
-  let s:V1 = [s:N1[0], s:magenta, 'bold']
+  let s:V1 = [s:N1[0], s:magenta, '']
   let s:V2 = s:N2
   let s:V3 = s:N3
   let s:VF = s:NF
@@ -173,4 +173,5 @@ function! airline#themes#solarized#refresh()
 endfunction
 
 call airline#themes#solarized#refresh()
+
 
